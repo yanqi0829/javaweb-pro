@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <!--    配置LoginServlet:配置LoginServlet与处理的请求的映射
+            先与url-pattern 匹配，找到 servlet-name 与servlet中的servlet-name 进而找到 servlet-class
+            Tomcat通过反射创建loginServlet 实例，根据具体请求方式调用对应的doGet doPost
+    -->
+    <servlet>
+        <servlet-name>loginServletName</servlet-name>
+        <servlet-class>com.own.login.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loginServletName</servlet-name>
+<!--        客户端请求 http://localhost:8080/web/login-->
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+</web-app>
